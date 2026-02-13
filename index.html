@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Viernes 13 Favorito</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .lockScreen {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .lockScreen input {
+            padding: 10px;
+            font-size: 18px;
+            margin-top: 15px;
+            border: none;
+            outline: none;
+            text-align: center;
+        }
+
+        .lockScreen button {
+            margin-top: 15px;
+            padding: 8px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .error {
+            color: crimson;
+            margin-top: 10px;
+        }
+
+        .hiddenPage {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Pantalla de contraseña -->
+<div class="lockScreen" id="lock">
+    <h2>Solo alguien especial sabe la contraseña</h2>
+    <input type="password" id="password" placeholder="Introduce la clave">
+    <button onclick="checkPassword()">Entrar</button>
+    <p id="errorMsg" class="error"></p>
+</div>
+
+<!-- Contenido oculto -->
+<div id="mainContent" class="hiddenPage">
+
+    <div class="moon"></div>
+    <div class="roses"></div>
+    <div class="hearts"></div>
+
+    <div class="content">
+        <h1>Feliz viernes 13, princesita.</h1>
+
+        <h2 class="subtitle">
+           Dicen que es un día de mala suerte.
+           <br>
+           A mí me parece un buen día para recordarte que estás conmigo.
+        </h2>
+
+        <div class="polaroid">
+            <img src="foto.jpeg" alt="Nosotros">
+            <div class="caption">Andreita & Yo</div>
+        </div>
+
+        <div class="letter">
+            <p id="typedText"></p>
+        </div>
+
+        <button onclick="showFinal()">Click ❤️</button>
+
+        <div id="finalMessage" class="hidden">
+            <h3>Eres lo más hermoso Andreita</h3>
+        </div>
+    </div>
+
+    <audio id="music" loop>
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+</div>
+
+<script>
+
+const correctPassword = "andrea123";
+
+function checkPassword() {
+    const input = document.getElementById("password").value;
+    if (input === correctPassword) {
+        document.getElementById("lock").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+        typeWriter();
+    } else {
+        document.getElementById("errorMsg").innerText = "Esa no es la clave... intenta otra vez";
+    }
+}
+
+const text = `Te quiero mucho, loquita.
+Contigo todo se siente en orden.`;
+
+let i = 0;
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typedText").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+    }
+}
+
+function showFinal() {
+    document.getElementById("finalMessage").classList.remove("hidden");
+    document.getElementById("music").play();
+}
+
+</script>
+
+</body>
+</html>

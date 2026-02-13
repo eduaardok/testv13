@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #0b0b0b, #1a0d0d);
+    color: #e8dede;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Luna suave */
+.moon {
+    position: fixed;
+    top: 60px;
+    right: 120px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #f5f5f5 40%, #bfbfbf 70%);
+    border-radius: 50%;
+    opacity: 0.4;
+    box-shadow: 0 0 30px rgba(255,255,255,0.2);
+    animation: floatMoon 12s ease-in-out infinite alternate;
+}
+.letter {
+    width: 55%;
+    margin: 20px auto;  /* antes 40px */
+    font-size: 1.2em;
+    line-height: 1.8;
+    min-height: 60px;   /* más compacto */
+}
+
+.content {
+    position: relative;
+    top: 18%;
+    animation: fadeIn 4s ease;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #d9b3b3;
+}
+
+.subtitle {
+    margin: 20px auto;
+    width: 60%;
+    font-size: 1.3em;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #cfc0c0;
+}
+
+.letter {
+    width: 55%;
+    margin: 40px auto;
+    font-size: 1.2em;
+    line-height: 1.8;
+    min-height: 100px;
+    color: #e0d6d6;
+}
+
+button {
+    margin-top: 10px;   /* antes estaba más grande */
+    padding: 8px 22px;
+    font-size: 1em;
+    font-family: 'Cormorant Garamond', serif;
+    background: transparent;
+    color: #d9b3b3;
+    border: 1px solid rgba(217,179,179,0.4);
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+button:hover {
+    background: rgba(217,179,179,0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+#finalMessage {
+    margin-top: 25px;
+    font-size: 1.4em;
+    font-weight: 400;
+    color: #e8dede;
+    animation: fadeSoft 3s ease forwards;
+}
+
+/* Animaciones suaves */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSoft {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes floatMoon {
+    from { transform: translateY(0px); }
+    to { transform: translateY(15px); }
+}
+.photo-container img {
+    width: 300px;
+    border-radius: 6px;
+    filter: grayscale(20%) brightness(0.85);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    transition: 0.8s ease;
+}
+
+.photo-container img:hover {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.02);
+}
+.polaroid {
+    width: 320px;
+    margin: 40px auto;
+    background: #111;
+    padding: 15px 15px 40px 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+    border-radius: 4px;
+    transition: 0.6s ease;
+    transform: rotate(-2deg);
+}
+
+.polaroid img {
+    width: 100%;
+    display: block;
+    border-radius: 2px;
+    filter: brightness(0.9) contrast(1.05);
+}
+
+.polaroid .caption {
+    margin-top: 15px;
+    font-size: 1.1em;
+    text-align: center;
+    color: #cfc0c0;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.03);
+}
+.polaroid::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 20px;
+    bottom: -10px;
+    left: 10%;
+    background: rgba(0,0,0,0.6);
+    filter: blur(10px);
+    z-index: -1;
+}
