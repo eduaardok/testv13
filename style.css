@@ -157,3 +157,65 @@ button:hover {
     filter: blur(10px);
     z-index: -1;
 }
+/* Ajustes generales */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.content {
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Imagen adaptable */
+.polaroid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Botón más cómodo para dedo */
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+/* Texto adaptable */
+h1 {
+    font-size: 28px;
+}
+
+.subtitle {
+    font-size: 18px;
+}
+
+.letter {
+    font-size: 17px;
+    line-height: 1.5;
+}
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .letter {
+        font-size: 16px;
+    }
+
+    .polaroid {
+        margin-top: 20px;
+    }
+}
+html, body {
+    height: 100%;
+    background-size: cover;
+}
