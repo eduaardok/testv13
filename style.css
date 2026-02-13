@@ -1,3 +1,4 @@
+/* ===== BASE ===== */
 body {
     margin: 0;
     padding: 0;
@@ -5,217 +6,164 @@ body {
     color: #e8dede;
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
-    height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
-/* Luna suave */
-.moon {
-    position: fixed;
-    top: 60px;
-    right: 120px;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, #f5f5f5 40%, #bfbfbf 70%);
-    border-radius: 50%;
-    opacity: 0.4;
-    box-shadow: 0 0 30px rgba(255,255,255,0.2);
-    animation: floatMoon 12s ease-in-out infinite alternate;
-}
-.letter {
-    width: 55%;
-    margin: 20px auto;  /* antes 40px */
-    font-size: 1.2em;
-    line-height: 1.8;
-    min-height: 60px;   /* más compacto */
-}
-
+/* ===== CONTENIDO ===== */
 .content {
-    position: relative;
-    top: 18%;
-    animation: fadeIn 4s ease;
+    width: 90%;
+    max-width: 520px;
+    margin: 80px auto;
+    animation: fadeIn 3s ease;
 }
 
+/* ===== TÍTULOS ===== */
 h1 {
-    font-size: 3em;
+    font-size: 2.4em;
     font-weight: 400;
-    letter-spacing: 1px;
     color: #d9b3b3;
 }
 
 .subtitle {
     margin: 20px auto;
-    width: 60%;
-    font-size: 1.3em;
-    font-weight: 300;
+    font-size: 1.1em;
     line-height: 1.6;
     color: #cfc0c0;
 }
 
+/* ===== CARTA ===== */
 .letter {
-    width: 55%;
-    margin: 40px auto;
-    font-size: 1.2em;
-    line-height: 1.8;
-    min-height: 100px;
-    color: #e0d6d6;
+    margin: 30px auto;
+    font-size: 1.1em;
+    line-height: 1.7;
+    min-height: 60px;
 }
 
-button {
-    margin-top: 10px;   /* antes estaba más grande */
-    padding: 8px 22px;
-    font-size: 1em;
-    font-family: 'Cormorant Garamond', serif;
-    background: transparent;
-    color: #d9b3b3;
-    border: 1px solid rgba(217,179,179,0.4);
-    cursor: pointer;
-    transition: 0.4s ease;
-}
-
-button:hover {
-    background: rgba(217,179,179,0.1);
-}
-
-.hidden {
-    display: none;
-}
-
-#finalMessage {
-    margin-top: 25px;
-    font-size: 1.4em;
-    font-weight: 400;
-    color: #e8dede;
-    animation: fadeSoft 3s ease forwards;
-}
-
-/* Animaciones suaves */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeSoft {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes floatMoon {
-    from { transform: translateY(0px); }
-    to { transform: translateY(15px); }
-}
-.photo-container img {
-    width: 300px;
-    border-radius: 6px;
-    filter: grayscale(20%) brightness(0.85);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-    transition: 0.8s ease;
-}
-
-.photo-container img:hover {
-    filter: grayscale(0%) brightness(1);
-    transform: scale(1.02);
-}
+/* ===== POLAROID ===== */
 .polaroid {
-    width: 320px;
-    margin: 40px auto;
+    width: 100%;
+    max-width: 320px;
+    margin: 30px auto;
     background: #111;
     padding: 15px 15px 40px 15px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.8);
     border-radius: 4px;
     transition: 0.6s ease;
     transform: rotate(-2deg);
+    position: relative;
 }
 
 .polaroid img {
     width: 100%;
+    height: auto;
     display: block;
     border-radius: 2px;
-    filter: brightness(0.9) contrast(1.05);
 }
 
 .polaroid .caption {
     margin-top: 15px;
-    font-size: 1.1em;
-    text-align: center;
+    font-size: 1em;
     color: #cfc0c0;
-    font-weight: 300;
-    letter-spacing: 1px;
 }
 
 .polaroid:hover {
     transform: rotate(0deg) scale(1.03);
 }
-.polaroid::after {
-    content: "";
-    position: absolute;
-    width: 80%;
-    height: 20px;
-    bottom: -10px;
-    left: 10%;
-    background: rgba(0,0,0,0.6);
-    filter: blur(10px);
-    z-index: -1;
-}
-/* Ajustes generales */
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
 
-.content {
-    width: 90%;
-    max-width: 500px;
-    margin: auto;
-    text-align: center;
-}
-
-/* Imagen adaptable */
-.polaroid img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Botón más cómodo para dedo */
+/* ===== BOTÓN ===== */
 button {
+    margin-top: 20px;
     padding: 12px 25px;
-    font-size: 16px;
+    font-size: 1em;
+    background: transparent;
+    color: #d9b3b3;
+    border: 1px solid rgba(217,179,179,0.4);
     border-radius: 20px;
+    cursor: pointer;
 }
 
-/* Texto adaptable */
-h1 {
-    font-size: 28px;
+/* ===== MENSAJE FINAL ===== */
+.hidden {
+    display: none;
 }
 
-.subtitle {
-    font-size: 18px;
+#finalMessage {
+    margin-top: 25px;
+    font-size: 1.2em;
 }
 
-.letter {
-    font-size: 17px;
-    line-height: 1.5;
+/* ===== LUNA ===== */
+.moon {
+    position: fixed;
+    top: 40px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(circle, #f5f5f5 40%, #bfbfbf 70%);
+    border-radius: 50%;
+    opacity: 0.3;
 }
+
+/* ===== ANIMACIÓN ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE EXTRA ===== */
 @media (max-width: 480px) {
+    .content {
+        margin: 60px auto;
+    }
+
     h1 {
-        font-size: 24px;
+        font-size: 1.8em;
     }
 
     .subtitle {
-        font-size: 16px;
+        font-size: 1em;
     }
 
     .letter {
-        font-size: 16px;
-    }
-
-    .polaroid {
-        margin-top: 20px;
+        font-size: 1em;
     }
 }
-html, body {
+
+/* ===== PANTALLA DE BLOQUEO ===== */
+.lockScreen {
+    position: fixed;
+    width: 100%;
     height: 100%;
-    background-size: cover;
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.lockScreen input {
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 15px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+.lockScreen button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.error {
+    color: crimson;
+    margin-top: 10px;
+}
+
+.hiddenPage {
+    display: none;
 }
